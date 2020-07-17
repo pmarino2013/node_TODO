@@ -38,9 +38,9 @@ switch (comando) {
 
   case "borrar":
     let borrado = borrar(argv.descripcion);
-    console.log(`La tarea ${argv.descripcion} fue eliminada`);
+    console.log(`La tarea ${argv.descripcion} fue eliminada`.green);
     break;
   default:
-    console.log("Comando no reconocido");
+    console.log("Comando no reconocido".red);
     break;
 }
