@@ -4,6 +4,7 @@ _Este es el ejercicio del curso de Nodejs donde creo tareas, las actualizo y eli
 
 ### Pre-requisitos:
 
+_Instalar npm_
 ...
 
 npm install
