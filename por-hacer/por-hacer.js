@@ -8,7 +8,7 @@ const guardarDB = () => {
   let data = JSON.stringify(listadoPorHacer);
   fs.writeFile("db/data.json", data, (err) => {
     if (err) throw err;
-    console.log("The file has been saved!");
+    // console.log("The file has been saved!");
   });
 };
 
@@ -60,8 +60,21 @@ const actualizar = (descripcion, completado) => {
   }
 };
 
+const borrar = (descripcion) => {
+  cargarDB(); //traigo la base de datos;
+
+  //creo un array nuevo y lo igualo al filter del array original descartando el item
+  // igual a la descripcion enviada.
+  const result = listadoPorHacer.filter(
+    (tarea) => tarea.descripcion !== descripcion
+  );
+  //igualo el arreglo original al contenido del nuevo arreglo
+  listadoPorHacer = result;
+  guardarDB(); //guardo el arreglo sin el item eliminado.
+};
 module.exports = {
   crear,
   getListado,
   actualizar,
+  borrar,
 };

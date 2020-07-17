@@ -2,7 +2,12 @@
 
 const argv = require("./config/yargs.js").argv;
 const colors = require("colors");
-const { crear, getListado, actualizar } = require("./por-hacer/por-hacer");
+const {
+  crear,
+  getListado,
+  actualizar,
+  borrar,
+} = require("./por-hacer/por-hacer");
 
 const comando = argv._[0];
 
@@ -29,6 +34,11 @@ switch (comando) {
       //console.log("Estado: ", tarea.completado);
     }
     console.log("================================".green);
+    break;
+
+  case "borrar":
+    let borrado = borrar(argv.descripcion);
+    console.log(`La tarea ${argv.descripcion} fue eliminada`);
     break;
   default:
     console.log("Comando no reconocido");

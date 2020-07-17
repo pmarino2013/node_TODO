@@ -15,6 +15,12 @@ const argv = require("yargs")
       default: true,
     },
   })
+  .command("borrar", "Elimina un elemento de la lista", {
+    descripcion: {
+      alias: "d",
+      demand: true,
+    },
+  })
   .help().argv;
 
 module.exports = {
