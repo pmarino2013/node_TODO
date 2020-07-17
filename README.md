@@ -1,11 +1,15 @@
-# Aplicación de comandos
+# Node_TO-DO 
 
-_Este es el ejercicio del curso de Nodejs donde creo tareas, las actualizo y elimino...ah...también las puedo listar_
+_Aplicación con Nodjs y Yargs para tareas_
 
-### Pre-requisitos:
+## Comenzando 🚀
+
+_Podemos agregar tareas, listarlas, actualizar su estado y borrarlas._
+
+### Pre-requisitos 📋
 
 _Instalar npm_
-...
 
+```
 npm install
-...
+```
