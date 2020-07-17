@@ -36,6 +36,13 @@ const crear = (descripcion) => {
   return porHacer;
 };
 
+//Funcion para listar las tareas
+const getListado = () => {
+  cargarDB(); //cargo el contenido del json en el arreglo
+  return listadoPorHacer; //devuelvo el arreglo
+};
+
 module.exports = {
   crear,
+  getListado,
 };
