@@ -2,7 +2,7 @@
 
 const argv = require("./config/yargs.js").argv;
 const colors = require("colors");
-const { crear, getListado } = require("./por-hacer/por-hacer");
+const { crear, getListado, actualizar } = require("./por-hacer/por-hacer");
 
 const comando = argv._[0];
 
@@ -12,7 +12,9 @@ switch (comando) {
     console.log(tarea);
     break;
   case "actualizar":
-    console.log("Actualizar la tarea");
+    let actualizado = actualizar(argv.descripcion, argv.completado);
+
+    console.log(actualizado);
     break;
   case "listar":
     let listado = getListado();
@@ -21,8 +23,10 @@ switch (comando) {
 
     for (let tarea of listado) {
       console.log(tarea.descripcion);
-      console.log(`Estado: ${tarea.completado ? "listo".green : "falta".red}`);
-      // console.log("Estado: ", tarea.completado );
+      console.log(
+        `Estado: ${tarea.completado === true ? "listo".green : "falta".red}`
+      );
+      //console.log("Estado: ", tarea.completado);
     }
     console.log("================================".green);
     break;

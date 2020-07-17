@@ -1,4 +1,5 @@
 const fs = require("fs");
+const colors = require("colors");
 
 let listadoPorHacer = []; //creo variable de arreglo para almacenar las tareas
 
@@ -42,7 +43,25 @@ const getListado = () => {
   return listadoPorHacer; //devuelvo el arreglo
 };
 
+const actualizar = (descripcion, completado) => {
+  cargarDB();
+
+  let index = listadoPorHacer.findIndex(
+    (tarea) => tarea.descripcion === descripcion
+  );
+
+  if (index >= 0) {
+    listadoPorHacer[index].completado = completado;
+    guardarDB();
+    return true;
+  } else {
+    // return false;
+    return console.log("La tarea no existe en la lista".red);
+  }
+};
+
 module.exports = {
   crear,
   getListado,
+  actualizar,
 };
