@@ -27,10 +27,10 @@ switch (comando) {
     console.log("===========Por Hacer============".green);
 
     for (let tarea of listado) {
-      console.log(tarea.descripcion);
-      console.log(
-        `Estado: ${tarea.completado === true ? "listo".green : "falta".red}`
-      );
+      console.log(`${tarea.completado === true ? "[X]".green : "[ ]".red}`,tarea.descripcion);
+      // console.log(
+      //   `Estado: ${tarea.completado === true ? "listo".green : "falta".red}`
+      // );
       //console.log("Estado: ", tarea.completado);
     }
     console.log("================================".green);
